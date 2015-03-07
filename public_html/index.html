@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="./lib/yajswgt.js"></script>
+        <script type="text/javascript">
+            function build(){
+                var viewport = new Panel("viewport");
+                viewport.setStyle("viewport");
+                
+                var p1 = new Panel("panel1");
+                p1.setStyle("widget inline");
+                p1.setStyle({"width" : "200px"});
+                var p2 = new Panel("panel2");
+                p2.setStyle("widget inline");
+                
+                viewport.Add(p1);
+                viewport.Add(p2);
+                viewport.build();
+            }
+        </script>
+    </head>
+    <body onload="build();">
+        
+    </body>
+</html>
