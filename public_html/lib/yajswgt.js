@@ -1,4 +1,11 @@
 /*
+ * 
+ * TODO #:
+ *      1. rewrite code for cfg using
+ *      2. add some usable content code
+ */
+
+/*
  * some additional functions
  */
 
@@ -76,7 +83,24 @@ function Panel(id) {
 }
 Panel.prototype = new Widget;
 
-
+/*
+ * alert message
+ */
+function Alert(msg){
+    this.msg = msg;
+    this.element = create("div");
+    this.element.setAttribute("class", "alert bg-d brd-d txt-d");
+    
+    var bar = create("div");
+    bar.setAttribute("class", "titlebar");
+    bar.appendChild(_d.createTextNode("Alert"));
+    
+    this.element.appendChild(bar);
+    this.element.appendChild(_d.createTextNode(this.msg));
+    
+    this.show = function(){ _d.body.appendChild(this.element); }
+}
+Alert.prototype = new Widget;
 /*
  * some menu things
  */
