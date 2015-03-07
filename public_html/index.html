@@ -15,13 +15,15 @@ and open the template in the editor.
                 viewport.setStyle("viewport");
                 
                 var p1 = new Panel("panel1");
-                p1.setStyle("widget inline");
-                p1.setStyle({"width" : "200px"});
+                p1.setStyle("+inline w20 h20");
                 var p2 = new Panel("panel2");
-                p2.setStyle("widget inline");
+                p2.setStyle("+inline w40 h20");
+                var p3 = new Panel("panel2");
+                p3.setStyle("+inline w80 h20");
                 
                 viewport.Add(p1);
                 viewport.Add(p2);
+                viewport.Add(p3);
                 viewport.build();
             }
         </script>

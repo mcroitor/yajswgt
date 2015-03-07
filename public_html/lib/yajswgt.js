@@ -1,3 +1,7 @@
+/*
+ * some additional functions
+ */
+
 var _d = document;
 function get(id) {
     return _d.getElementById(id);
@@ -5,6 +9,10 @@ function get(id) {
 function create(el) {
     return _d.createElement(el);
 }
+
+/*
+ * load default style
+ */
 
 function initStyle() {
     var tag_css = create('link');
@@ -15,12 +23,24 @@ function initStyle() {
     tag_head[0].appendChild(tag_css);
 }
 initStyle();
+////////////////////////////////////
 
-function Widget(style) {
+/*
+ * abstract widget
+ * all graphical elements are nested from widget
+ */
+function Widget() {
+    this.element = null;
 
     this.setStyle = function (style) {
         if (typeof style === "string") {
-            this.element.setAttribute("class", style);
+            if (style.charAt(0) === '+') {
+                cls = this.element.getAttribute("class");
+                this.element.setAttribute("class", cls + " " + style.substring(1, style.length));
+            }
+            else {
+                this.element.setAttribute("class", style);
+            }
         }
         else {
             for (var property in style) {
@@ -30,10 +50,14 @@ function Widget(style) {
     };
 }
 
+/*
+ * simple panel
+ */
 function Panel(id) {
     this.id = id;
     this.element = create("div");
     this.element.setAttribute("id", id);
+    this.element.setAttribute("class", "widget bg-d brd-d txt-d");
     this.childs = {};
 
     this.Add = function (w) {
@@ -52,6 +76,10 @@ function Panel(id) {
 }
 Panel.prototype = new Widget;
 
+
+/*
+ * some menu things
+ */
 function MenuLink(text, link) {
     this.text = text;
     this.link = link || "#";
@@ -73,4 +101,4 @@ function MenuPanel(id) {
         this.element.appendChild(ml.element);
     };
 }
-MenuPanel.prototype = new Widget;
+MenuPanel.prototype = new Panel;

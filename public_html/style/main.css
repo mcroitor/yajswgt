@@ -1,15 +1,75 @@
+/* fix */
 body, div, p, a, form, table, tr, td, img h1, h2, h3, h4, h5, h6
 { margin: 0px; padding: 0px; border: 0; font-family: "monospace";}
 
-.block{ display: block; }
+/* indent */
+.block { display: block; }
 .inline {display: inline-block; }
+
+/* colors */
+/* backgrounds */
+.bg-white { background-color: white; }
+.bg-red { background-color: red; }
+.bg-orange { background-color: orange; }
+.bg-yellow { background-color: yellow; }
+.bg-green { background-color: green; }
+.bg-lightblue { background-color: lightblue; }
+.bg-blue { background-color: blue; }
+.bg-violet { background-color: violet; }
+.bg-black { background-color: black; }
+
+.bg-d { background-color: dodgerblue; }
+/* borders */
+.brd-white { border-color: white; }
+.brd-red { border-color: red; }
+.brd-orange { border-color: orange; }
+.brd-yellow { border-color: yellow; }
+.brd-green { border-color: green; }
+.brd-lightblue { border-color: lightblue; }
+.brd-blue { border-color: blue; }
+.brd-violet { border-color: violet; }
+.brd-black { border-color: black; }
+
+.brd-d { border-color: dodgerblue; }
+/* texts */
+.txt-white { color: white; }
+.txt-red { color: red; }
+.txt-orange { color: orange; }
+.txt-yellow { color: yellow; }
+.txt-green { color: green; }
+.txt-lightblue { color: lightblue; }
+.txt-blue { color: blue; }
+.txt-violet { color: violet; }
+.txt-black { color: black; }
+
+.txt-d { color: yellow; }
+/* sizes */
+.w10 {width: 10px; }
+.w20 {width: 20px; }
+.w30 {width: 30px; }
+.w40 {width: 40px; }
+.w50 {width: 50px; }
+.w80 {width: 80px; }
+.w100 {width: 100px; }
+.w120 {width: 120px; }
+.w150 {width: 150px; }
+.w200 {width: 200px; }
+
+.h10 {height: 10px; }
+.h20 {height: 20px; }
+.h30 {height: 30px; }
+.h40 {height: 40px; }
+.h50 {height: 50px; }
+.h80 {height: 80px; }
+.h100 {height: 100px; }
+.h120 {height: 120px; }
+.h150 {height: 150px; }
+.h200 {height: 200px; }
+/* widget */
 .widget{
-    background-color: dodgerblue;
-    border: 1px solid dodgerblue;
     border-radius: 10px;
-    width: 96px;
-    height: 96px;
     margin: 1px;
+    padding: 5px;
 }
 
 .viewport{
