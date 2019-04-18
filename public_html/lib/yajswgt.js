@@ -1,11 +1,4 @@
 /*
- * 
- * TODO #:
- *      1. rewrite code for cfg using
- *      2. add some usable content code
- */
-
-/*
  * some additional functions
  */
 
@@ -70,6 +63,7 @@ function Panel(id) {
     this.Add = function (w) {
         this.childs[w.id] = w;
         this.element.appendChild(w.element);
+        return this;
     };
 
     this.build = function () {
@@ -84,6 +78,24 @@ function Panel(id) {
 Panel.prototype = new Widget;
 
 /*
+ * 
+ * @param {ID} id
+ * @param {Text} txt
+ * @param {Reference} ref
+ * @returns {undefined}
+ */
+function Button(id, txt, ref){
+    this.id         = id;
+    this.text       = txt;
+    this.reference  = ref;
+    this.element    = create("a");
+    this.element.setAttribute("href", this.reference);
+    this.element.innerHTML = this.text;
+    this.element.setAttribute("class", "button inline bg-d brd-d txt-d");
+}
+Button.prototype = new Widget;
+
+/*
  * alert message
  */
 function Alert(msg){
@@ -94,11 +106,15 @@ function Alert(msg){
     var bar = create("div");
     bar.setAttribute("class", "titlebar");
     bar.appendChild(_d.createTextNode("Alert"));
+    var x = new Button("close-alert", "X", );
+    bar.appendChild(x.element);
+    
     
     this.element.appendChild(bar);
     this.element.appendChild(_d.createTextNode(this.msg));
     
-    this.show = function(){ _d.body.appendChild(this.element); }
+    this.show = function(){ _d.body.appendChild(this.element); };
+    this.close = function() { _d.body.removeChild(this.element); };
 }
 Alert.prototype = new Widget;
 /*

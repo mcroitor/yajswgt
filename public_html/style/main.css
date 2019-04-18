@@ -66,8 +66,39 @@ body, div, p, a, form, table, tr, td, img h1, h2, h3, h4, h5, h6
 .h150 {height: 150px; }
 .h200 {height: 200px; }
 
+/* borders */
+.brd-solid {border-style: solid; }
+.brd-inset {border-style: inset; }
+.brd-outset {border-style: outset; }
+.brd-none {border-style: none; }
+.brd-s1 {border: 1px; }
+.brd-s2 {border: 2px; }
+.brd-s3 {border: 3px; }
+
+/* margins */
+.m1 {margin:1px;}
+.m2 {margin:2px;}
+.m3 {margin:3px;}
+.m4 {margin:4px;}
+.m5 {margin:5px;}
+.m10 {margin:10px;}
+
+/* paddings */
+.p1 {padding:1px;}
+.p2 {padding:2px;}
+.p3 {padding:3px;}
+.p4 {padding:4px;}
+.p5 {padding:5px;}
+.p10 {padding:10px;}
+
 /* widget */
 .widget{ /* border-radius: 10px; margin: 1px; padding: 5px;*/ }
+.button{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.button:hover {background-color: white; color: blue;}
 
 .viewport{
     width:100%;
